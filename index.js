@@ -58,18 +58,18 @@ app.post("/chat", async (req, res) => {
       messages: [
         {
           text: "Hey dear... How was your day?",
-          audio: await audioFileToBase64("audios/intro_0.wav"),
-          lipsync: await readJsonTranscript("audios/intro_0.json"),
+          audio: await audioFileToBase64("audios/Raul.wav"),
+          lipsync: await readJsonTranscript("audios/Raul.json"),
           facialExpression: "smile",
-          animation: "Talking_1",
+          animation: "Rumba",
         },
-        {
-          text: "I missed you so much... Please don't go for so long!",
-          audio: await audioFileToBase64("audios/intro_1.wav"),
-          lipsync: await readJsonTranscript("audios/intro_1.json"),
-          facialExpression: "sad",
-          animation: "Crying",
-        },
+        // {
+        //   text: "I missed you so much... Please don't go for so long!",
+        //   audio: await audioFileToBase64("audios/intro_1.wav"),
+        //   lipsync: await readJsonTranscript("audios/intro_1.json"),
+        //   facialExpression: "sad",
+        //   animation: "Crying",
+        // },
       ],
     });
     return;
