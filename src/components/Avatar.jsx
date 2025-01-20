@@ -108,7 +108,7 @@ let setupMode = false;
 
 export function Avatar(props) {
   const { nodes, materials, scene } = useGLTF(
-    "/models/678518e2cb9a308e30fdbb41.glb"
+    "/models/678bdfbde7d0e7c8a712e41c.glb"
   );
 
   const { message, onMessagePlayed, chat } = useChat();
@@ -307,8 +307,8 @@ export function Avatar(props) {
 
   return (
     <group {...props} dispose={null} ref={group}>
-      <primitive object={nodes.Hips} />
-       <skinnedMesh
+       <primitive object={nodes.Hips} />
+      <skinnedMesh
         name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}
         material={materials.Wolf3D_Eye}
@@ -374,5 +374,5 @@ export function Avatar(props) {
   )
 }
 
-useGLTF.preload('/678518e2cb9a308e30fdbb41.glb')
+useGLTF.preload('/678bdfbde7d0e7c8a712e41c.glb')
 useGLTF.preload("/models/animations.glb");
