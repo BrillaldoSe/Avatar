@@ -8,8 +8,8 @@ function App() {
   return (
     <>
       <Loader />
-      <Leva  />
-      <UI hidden/>
+      <Leva />
+      <UI hidden />
       <Canvas shadows camera={{ position: [0, 0, 1], fov: 42 }}>
         <Experience />
       </Canvas>

@@ -23,18 +23,18 @@ const facialExpressions = {
     mouthPressRight: 0.41000000000000003,
   },
   funnyFace: {
-    jawLeft: 0.63,
-    mouthPucker: 0.53,
-    noseSneerLeft: 1,
-    noseSneerRight: 0.39,
-    mouthLeft: 1,
-    eyeLookUpLeft: 1,
-    eyeLookUpRight: 1,
-    cheekPuff: 0.9999924982764238,
-    mouthDimpleLeft: 0.414743888682652,
-    mouthRollLower: 0.32,
-    mouthSmileLeft: 0.35499733688813034,
-    mouthSmileRight: 0.35499733688813034,
+    "jawLeft": 0.6299999949850719,
+    "mouthPucker": 0.5299999957810926,
+    "noseSneerLeft": 0.9999999920397965,
+    "noseSneerRight": 0.3899999968955209,
+    "mouthLeft": 0.9999999920397965,
+    "eyeLookUpLeft": 0.9999999920397965,
+    "eyeLookUpRight": 0.9999999920397965,
+    "cheekPuff": 0.9999924903162803,
+    "mouthDimpleLeft": 0.4147438853812065,
+    "mouthRollLower": 0.3199999974527351,
+    "mouthSmileLeft": 0.35499733406227935,
+    "mouthSmileRight": 0.35499733406227935
   },
   sad: {
     mouthFrownLeft: 1,
@@ -92,6 +92,7 @@ const facialExpressions = {
   },
 };
 
+// Definir el mapeo de visemes
 const corresponding = {
   A: "viseme_PP",
   B: "viseme_kk",
@@ -101,14 +102,17 @@ const corresponding = {
   F: "viseme_U",
   G: "viseme_FF",
   H: "viseme_TH",
-  X: "viseme_PP",
+  X: "viseme_PP"
 };
+
+
 
 let setupMode = false;
 
 export function Avatar(props) {
   const { nodes, materials, scene } = useGLTF(
-    "/models/678bdfbde7d0e7c8a712e41c.glb"
+     //"/models/678e6942f74a4a7ad7e71ca4.glb"
+    "/models/678e716e2ebf1fb4b377a513.glb"
   );
 
   const { message, onMessagePlayed, chat } = useChat();
@@ -130,7 +134,8 @@ export function Avatar(props) {
     audio.onended = onMessagePlayed;
   }, [message]);
 
-  const { animations } = useGLTF("/models/animations.glb");
+  // const { animations } = useGLTF("/models/animations.glb");
+  const { animations } = useGLTF("/models/animations8.glb");
 
   const group = useRef();
   const { actions, mixer } = useAnimations(animations, group);
@@ -307,7 +312,7 @@ export function Avatar(props) {
 
   return (
     <group {...props} dispose={null} ref={group}>
-       <primitive object={nodes.Hips} />
+      <primitive object={nodes.Hips} />
       <skinnedMesh
         name="EyeLeft"
         geometry={nodes.EyeLeft.geometry}
@@ -346,11 +351,6 @@ export function Avatar(props) {
         skeleton={nodes.Wolf3D_Hair.skeleton}
       />
       <skinnedMesh
-        geometry={nodes.Wolf3D_Glasses.geometry}
-        material={materials.Wolf3D_Glasses}
-        skeleton={nodes.Wolf3D_Glasses.skeleton}
-      />
-      <skinnedMesh
         geometry={nodes.Wolf3D_Body.geometry}
         material={materials.Wolf3D_Body}
         skeleton={nodes.Wolf3D_Body.skeleton}
@@ -374,5 +374,76 @@ export function Avatar(props) {
   )
 }
 
-useGLTF.preload('/678bdfbde7d0e7c8a712e41c.glb')
-useGLTF.preload("/models/animations.glb");
+useGLTF.preload('/678e716e2ebf1fb4b377a513.glb')
+useGLTF.preload("/models/animations8.glb");
+// return (
+//   <group {...props} dispose={null} ref={group}>
+//     <primitive object={nodes.Hips} />
+//     <skinnedMesh
+//       name="EyeLeft"
+//       geometry={nodes.EyeLeft.geometry}
+//       material={materials.Wolf3D_Eye}
+//       skeleton={nodes.EyeLeft.skeleton}
+//       morphTargetDictionary={nodes.EyeLeft.morphTargetDictionary}
+//       morphTargetInfluences={nodes.EyeLeft.morphTargetInfluences}
+//     />
+//     <skinnedMesh
+//       name="EyeRight"
+//       geometry={nodes.EyeRight.geometry}
+//       material={materials.Wolf3D_Eye}
+//       skeleton={nodes.EyeRight.skeleton}
+//       morphTargetDictionary={nodes.EyeRight.morphTargetDictionary}
+//       morphTargetInfluences={nodes.EyeRight.morphTargetInfluences}
+//     />
+//     <skinnedMesh
+//       name="Wolf3D_Head"
+//       geometry={nodes.Wolf3D_Head.geometry}
+//       material={materials.Wolf3D_Skin}
+//       skeleton={nodes.Wolf3D_Head.skeleton}
+//       morphTargetDictionary={nodes.Wolf3D_Head.morphTargetDictionary}
+//       morphTargetInfluences={nodes.Wolf3D_Head.morphTargetInfluences}
+//     />
+//     <skinnedMesh
+//       name="Wolf3D_Teeth"
+//       geometry={nodes.Wolf3D_Teeth.geometry}
+//       material={materials.Wolf3D_Teeth}
+//       skeleton={nodes.Wolf3D_Teeth.skeleton}
+//       morphTargetDictionary={nodes.Wolf3D_Teeth.morphTargetDictionary}
+//       morphTargetInfluences={nodes.Wolf3D_Teeth.morphTargetInfluences}
+//     />
+//     <skinnedMesh
+//       geometry={nodes.Wolf3D_Hair.geometry}
+//       material={materials.Wolf3D_Hair}
+//       skeleton={nodes.Wolf3D_Hair.skeleton}
+//     />
+//     <skinnedMesh
+//       geometry={nodes.Wolf3D_Glasses.geometry}
+//       material={materials.Wolf3D_Glasses}
+//       skeleton={nodes.Wolf3D_Glasses.skeleton}
+//     />
+//     <skinnedMesh
+//       geometry={nodes.Wolf3D_Body.geometry}
+//       material={materials.Wolf3D_Body}
+//       skeleton={nodes.Wolf3D_Body.skeleton}
+//     />
+//     <skinnedMesh
+//       geometry={nodes.Wolf3D_Outfit_Bottom.geometry}
+//       material={materials.Wolf3D_Outfit_Bottom}
+//       skeleton={nodes.Wolf3D_Outfit_Bottom.skeleton}
+//     />
+//     <skinnedMesh
+//       geometry={nodes.Wolf3D_Outfit_Footwear.geometry}
+//       material={materials.Wolf3D_Outfit_Footwear}
+//       skeleton={nodes.Wolf3D_Outfit_Footwear.skeleton}
+//     />
+//     <skinnedMesh
+//       geometry={nodes.Wolf3D_Outfit_Top.geometry}
+//       material={materials.Wolf3D_Outfit_Top}
+//       skeleton={nodes.Wolf3D_Outfit_Top.skeleton}
+//     />
+//   </group>
+// )
+// }
+
+// useGLTF.preload('/models/678e6942f74a4a7ad7e71ca4.glb')
+// useGLTF.preload("/models/animations3.glb");
