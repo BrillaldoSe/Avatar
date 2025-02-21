@@ -1,10 +1,10 @@
 
 
-![Video Thumbnail](https://img.youtube.com/vi/EzzcEL_1o9o/maxresdefault.jpg)
+Brillaldo Serra 
 
-[Video tutorial](https://youtu.be/EzzcEL_1o9o)
+credits for [Video tutorial](https://youtu.be/EzzcEL_1o9o)
+The backend is [here](https://github.com/BrillaldoSe/Avatar/tree/Front/).
 
-The frontend is [here](https://github.com/wass08/r3f-virtual-girlfriend-frontend).
 
 ## Setup
 Create a `.env` file at the root of the repository to add your **OpenAI** and **ElevenLabs API Keys**. Refer to `.env.example` for the environment variable names.
