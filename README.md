@@ -1,6 +1,6 @@
 Brillaldo Serra 
 
-credits for [here](https://www.youtube.com/watch?v=EzzcEL_1o9o&t=479s)
+credits for [Video tutorial](https://youtu.be/EzzcEL_1o9o)
 The backend is [here](https://github.com/BrillaldoSe/Avatar/tree/Back).
 
 Start the development server with
