@@ -12,7 +12,8 @@ const openai = new OpenAI({
 });
 
 const elevenLabsApiKey = process.env.ELEVEN_LABS_API_KEY;
-const voiceID = "kgG7dCoKCfLehAPWkJOE";
+const voiceID = "9BWtsMINqrJLrRacOk9x";
+//"kgG7dCoKCfLehAPWkJOE";
 
 const app = express();
 app.use(express.json());
@@ -57,18 +58,53 @@ app.post("/chat", async (req, res) => {
     res.send({
       messages: [
         {
-          text: "Hey dear... How was your day?",
-          audio: await audioFileToBase64("audios/Raul.wav"),
-          lipsync: await readJsonTranscript("audios/Raul.json"),
+          
+          audio: await audioFileToBase64("audios/audichi.wav"),
+          lipsync: await readJsonTranscript("audios/audichi.json"),
           facialExpression: "smile",
-          animation: "Angry",
+          animation: "Talking_0",
         },
+        {
+         
+          audio: await audioFileToBase64("audios/audioChirag.wav"),
+          lipsync: await readJsonTranscript("audios/audioChirag.json"),
+          facialExpression: "smile",
+          animation: "Talking_1"
+        }
+        //{
+         
+        //   audio: await audioFileToBase64("audios/3.wav"),
+        //   lipsync: await readJsonTranscript("audios/3.json"),
+        //   facialExpression: "smile",
+        //   animation: "Talking_0"
+        // },
         // {
-        //   text: "I missed you so much... Please don't go for so long!",
-        //   audio: await audioFileToBase64("audios/intro_1.wav"),
-        //   lipsync: await readJsonTranscript("audios/intro_1.json"),
-        //   facialExpression: "sad",
-        //   animation: "Crying",
+          
+        //   audio: await audioFileToBase64("audios/3.wav"),
+        //   lipsync: await readJsonTranscript("audios/3.json"),
+        //   facialExpression: "smile",
+        //   animation: "Talking_1"
+        // },
+        // {
+          
+        //   audio: await audioFileToBase64("audios/4.wav"),
+        //   lipsync: await readJsonTranscript("audios/4.json"),
+        //   facialExpression: "smile",
+        //   animation: "Talking_0"
+        // },
+        // {
+         
+        //   audio: await audioFileToBase64("audios/5.wav"),
+        //   lipsync: await readJsonTranscript("audios/5.json"),
+        //   facialExpression: "smile",
+        //   animation: "Talking_1"
+        // },
+        // {
+         
+        //   audio: await audioFileToBase64("audios/6.wav"),
+        //   lipsync: await readJsonTranscript("audios/6.json"),
+        //   facialExpression: "smile",
+        //   animation: "Talking_0"
         // },
       ],
     });
