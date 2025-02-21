@@ -1,11 +1,10 @@
-![Video Thumbnail](https://img.youtube.com/vi/EzzcEL_1o9o/maxresdefault.jpg)
+Brillaldo Serra 
 
-[Video tutorial](https://youtu.be/EzzcEL_1o9o)
-
-The backend is [here](https://github.com/wass08/r3f-virtual-girlfriend-backend).
+credits for [here](https://www.youtube.com/watch?v=EzzcEL_1o9o&t=479s)
+The backend is [here](https://github.com/BrillaldoSe/Avatar/tree/Back).
 
 Start the development server with
-```
+
 yarn
 yarn dev
-```
+
